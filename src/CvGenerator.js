@@ -52,9 +52,23 @@ class CvGenerator extends Component {
       },
       skills: [],
     }
+
+    this.handleChange = this.handleChange.bind(this);
+  };
+
+  handleChange = (e) => {
+    const value = e.target.value
+    this.setState(prevState => ({
+      ...prevState,
+      personalInfo: {
+        ...prevState.personalInfo,
+        [e.target.name]: value,
+      }
+    }))
   };
 
   render() {
+    const {handleChange} = this
     const {personalInfo, contactInfo, workExperience, education, skill} = this.state;
 
     return(
@@ -65,7 +79,7 @@ class CvGenerator extends Component {
         <div id="generator-container">
           <div id="personal-info">
             <h2>Personal Information</h2>
-            <PersonalForm personalInfo={personalInfo}/>
+            <PersonalForm personalInfo={personalInfo} handleChange={handleChange}/>
           </div>
           <div id="contact-info">
             <h2>Contact Information</h2>

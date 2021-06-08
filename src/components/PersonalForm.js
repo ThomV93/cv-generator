@@ -1,25 +1,22 @@
 import { Component } from "react";
 
 class PersonalForm extends Component {
-  constructor(props) {
-    super(props)
-  }
-
 	render() {
+		const {handleChange, personalInfo} = this.props;
+
 		return(
 			<form>
-				<label htmlFor="first-name">First Name:</label>
-				<input type="text" id="first-name" placeholder="First name"></input>
-				<label htmlFor="last-name">Last Name:</label>
-				<input type="text" id="last-name" placeholder="Last name"></input>
-				<label htmlFor="current-role">Current Role:</label>
-				<input type="text" id="current-role" placeholder="Current role"></input>
+				<label htmlFor="name">First Name:</label>
+				<input type="text" name="name" placeholder="First name" value={personalInfo.name} onChange={handleChange}></input>
+				<label htmlFor="lastName">Last Name:</label>
+				<input type="text" name="lastName" placeholder="Last name" value={personalInfo.lastName} onChange={handleChange}></input>
+				<label htmlFor="role">Current Role:</label>
+				<input type="text" name="role" placeholder="Current role" value={personalInfo.role} onChange={handleChange}></input>
 				<label htmlFor="profile">Profile:</label>
-				<input id="profile" placeholder="Profile"></input>
+				<input name="profile" placeholder="Profile" value={personalInfo.profile} onChange={handleChange}></input>
 			</form>
 		)
 	}
-
 }
 
 export default PersonalForm;

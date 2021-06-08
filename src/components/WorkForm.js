@@ -1,10 +1,6 @@
 import { Component } from "react";
 
 class WorkForm extends Component {
-  constructor(props) {
-    super(props)
-  }
-
 	render() {
 		return(
       <form>

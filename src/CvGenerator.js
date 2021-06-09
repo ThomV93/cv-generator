@@ -19,9 +19,9 @@ class CvGenerator extends Component {
 
       contactInfo: {
         email: "",
-        adress: "",
         phone: "",
-        description: "",
+        location: "",
+        site: "",
       },
 
       workExperience: {
@@ -67,6 +67,7 @@ class CvGenerator extends Component {
         [e.target.name]: value,
       }
     }))
+    console.log(this.state.contactInfo);
   };
 
   render() {

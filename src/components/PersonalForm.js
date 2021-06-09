@@ -7,13 +7,13 @@ class PersonalForm extends Component {
 		return(
 			<form>
 				<label htmlFor="name">First Name:</label>
-				<input type="text" name="name" placeholder="First name" value={personalInfo.name} onChange={handleChange}></input>
+				<input type="text" name="name" placeholder="First name" value={personalInfo.name} onChange={(e) => {handleChange(e, "personalInfo")}}></input>
 				<label htmlFor="lastName">Last Name:</label>
-				<input type="text" name="lastName" placeholder="Last name" value={personalInfo.lastName} onChange={handleChange}></input>
+				<input type="text" name="lastName" placeholder="Last name" value={personalInfo.lastName} onChange={(e) => {handleChange(e, "personalInfo")}}></input>
 				<label htmlFor="role">Current Role:</label>
-				<input type="text" name="role" placeholder="Current role" value={personalInfo.role} onChange={handleChange}></input>
+				<input type="text" name="role" placeholder="Current role" value={personalInfo.role} onChange={(e) => {handleChange(e, "personalInfo")}}></input>
 				<label htmlFor="profile">Profile:</label>
-				<input name="profile" placeholder="Profile" value={personalInfo.profile} onChange={handleChange}></input>
+				<input name="profile" placeholder="Profile" value={personalInfo.profile} onChange={(e) => {handleChange(e, "personalInfo")}}></input>
 			</form>
 		)
 	}

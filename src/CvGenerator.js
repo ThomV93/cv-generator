@@ -56,12 +56,14 @@ class CvGenerator extends Component {
     this.handleChange = this.handleChange.bind(this);
   };
 
-  handleChange = (e) => {
+  /* Dynamic input event handler */
+  handleChange = (e, parent) => {
     const value = e.target.value
+    /* Copy a version of the existing object and change only the necessary */
     this.setState(prevState => ({
       ...prevState,
-      personalInfo: {
-        ...prevState.personalInfo,
+      [parent]: {
+        ...prevState[parent],
         [e.target.name]: value,
       }
     }))
@@ -83,7 +85,7 @@ class CvGenerator extends Component {
           </div>
           <div id="contact-info">
             <h2>Contact Information</h2>
-            <ContactForm contactInfo={contactInfo}/>
+            <ContactForm contactInfo={contactInfo} handleChange={handleChange}/>
           </div>
           <div id="work-experience">
             <h2>Work Experience</h2>

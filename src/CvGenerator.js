@@ -1,4 +1,5 @@
 import {Component} from "react";
+import uniqid from "uniqid";
 import ContactForm from "./components/ContactForm";
 import EducationForm from "./components/EducationForm";
 import PersonalForm from "./components/PersonalForm";
@@ -25,29 +26,29 @@ class CvGenerator extends Component {
       },
 
       workExperience: {
-        id: "",
+        id: uniqid(),
         position: "",
         company: "",
         location: "",
-        started: "",
-        ended: "",
+        from: "",
+        to: "",
         description: "",
       },
       jobs: [],
 
       education: {
-        id: "",
+        id: uniqid(),
         degree: "",
         school: "",
         location: "",
-        started: "",
-        ended: "",
+        from: "",
+        to: "",
         description: "",
       },
       schools: [],
 
       skill: {
-        id: "",
+        id: uniqid(),
         title: "",
       },
       skills: [],
@@ -67,7 +68,6 @@ class CvGenerator extends Component {
         [e.target.name]: value,
       }
     }))
-    console.log(this.state.contactInfo);
   };
 
   render() {
@@ -90,7 +90,7 @@ class CvGenerator extends Component {
           </div>
           <div id="work-experience">
             <h2>Work Experience</h2>
-            <WorkForm workExperience={workExperience}/>
+            <WorkForm workExperience={workExperience} handleChange={handleChange}/>
           </div>
           <div id="education">
             <h2>Education</h2>

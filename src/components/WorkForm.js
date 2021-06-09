@@ -2,20 +2,22 @@ import { Component } from "react";
 
 class WorkForm extends Component {
 	render() {
+    const {handleChange, workExperience} = this.props;
+
 		return(
       <form>
-        <label htmlFor="position-title">Position Title:</label>
-        <input type="text" id="position-title" placeholder="Position title"></input>
+        <label htmlFor="position">Position:</label>
+        <input type="text" name="position" placeholder="Position" value={workExperience.position} onChange={(e) => {handleChange(e, "workExperience")}}></input>
         <label htmlFor="company">Company:</label>
-        <input type="text" id="company" placeholder="Company name"></input>
+        <input type="text" name="company" placeholder="Company" value={workExperience.company} onChange={(e) => {handleChange(e, "workExperience")}}></input>
         <label htmlFor="location">Location:</label>
-        <input type="text" id="location" placeholder="Location"></input>
-        <label htmlFor="starting-date">From:</label>
-        <input type="date" id="starting-date"></input>
-        <label htmlFor="end-date">To:</label>
-        <input type="date" id="end-date"></input>
-        <label htmlFor="further-description">Further Description:</label>
-        <input id="further-description" placeholder="Further Description"></input>
+        <input type="text" name="location" placeholder="Location" value={workExperience.location} onChange={(e) => {handleChange(e, "workExperience")}}></input>
+        <label htmlFor="from">From:</label>
+        <input type="month" name="from" value={workExperience.from} onChange={(e) => {handleChange(e, "workExperience")}}></input>
+        <label htmlFor="to">To:</label>
+        <input type="month" name="to" value={workExperience.to} onChange={(e) => {handleChange(e, "workExperience")}}></input>
+        <label htmlFor="description">Further Description:</label>
+        <textarea name="description" placeholder="Further Description" value={workExperience.description} onChange={(e) => {handleChange(e, "workExperience")}}></textarea>
       </form>
 		)
 	}

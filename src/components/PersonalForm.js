@@ -13,7 +13,7 @@ class PersonalForm extends Component {
 				<label htmlFor="role">Current Role:</label>
 				<input type="text" name="role" placeholder="Current role" value={personalInfo.role} onChange={(e) => {handleChange(e, "personalInfo")}}></input>
 				<label htmlFor="profile">Profile:</label>
-				<textarea name="profile" placeholder="Profile" value={personalInfo.profile} onChange={(e) => {handleChange(e, "personalInfo")}}></textarea>
+				<textarea name="profile" placeholder="Describe yourself" value={personalInfo.profile} onChange={(e) => {handleChange(e, "personalInfo")}}></textarea>
 			</form>
 		)
 	}

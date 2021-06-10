@@ -43,7 +43,6 @@ class CvGenerator extends Component {
         location: "",
         from: "",
         to: "",
-        description: "",
       },
       schools: [],
 
@@ -55,6 +54,9 @@ class CvGenerator extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.onSubmitJob = this.onSubmitJob.bind(this);
+    this.onSubmitSchool = this.onSubmitSchool.bind(this);
+    this.onSubmitSkill = this.onSubmitSkill.bind(this);
   };
 
   /* Dynamic input event handler */
@@ -70,8 +72,51 @@ class CvGenerator extends Component {
     }))
   };
 
+  onSubmitJob = e => {
+    e.preventDefault();
+    this.setState({
+      jobs: this.state.jobs.concat(this.state.workExperience),
+      workExperience: {
+        id: uniqid(),
+        position: "",
+        company: "",
+        location: "",
+        from: "",
+        to: "",
+        description: "",
+      },
+    });
+  };
+
+  onSubmitSchool = e => {
+    e.preventDefault();
+    this.setState({
+      schools: this.state.schools.concat(this.state.education),
+      education: {
+        id: uniqid(),
+        degree: "",
+        school: "",
+        location: "",
+        from: "",
+        to: "",
+      },
+    });
+    console.log(this.state.education);
+  };
+
+  onSubmitSkill = e => {
+    e.preventDefault();
+    this.setState({
+      skills: this.state.skills.concat(this.state.skill),
+      skill: {
+        id: uniqid(),
+        title: "",
+      },
+    });
+  };
+
   render() {
-    const {handleChange} = this
+    const {handleChange, onSubmitJob, onSubmitSchool, onSubmitSkill} = this
     const {personalInfo, contactInfo, workExperience, education, skill} = this.state;
 
     return(
@@ -90,15 +135,15 @@ class CvGenerator extends Component {
           </div>
           <div id="work-experience">
             <h2>Work Experience</h2>
-            <WorkForm workExperience={workExperience} handleChange={handleChange}/>
+            <WorkForm workExperience={workExperience} handleChange={handleChange} onSubmitJob={onSubmitJob}/>
           </div>
           <div id="education">
             <h2>Education</h2>
-            <EducationForm education={education}/>
+            <EducationForm education={education} handleChange={handleChange} onSubmitSchool={onSubmitSchool}/>
           </div>
           <div id="expertise">
             <h2>Expertise</h2>
-            <SkillForm skill={skill}/>
+            <SkillForm skill={skill} handleChange={handleChange} onSubmitSkill={onSubmitSkill}/>
           </div>
         </div>
       </div>

@@ -1,10 +1,7 @@
-import {Component} from "react";
+import { Component } from "react";
 import uniqid from "uniqid";
-import ContactForm from "./components/ContactForm";
-import EducationForm from "./components/EducationForm";
-import PersonalForm from "./components/PersonalForm";
-import SkillForm from "./components/SkillForm";
-import WorkForm from "./components/WorkForm";
+import Header from "./components/Header";
+import CvForm from "./components/form/CvForm";
 
 class CvGenerator extends Component {
   constructor(props) {
@@ -101,7 +98,6 @@ class CvGenerator extends Component {
         to: "",
       },
     });
-    console.log(this.state.education);
   };
 
   onSubmitSkill = e => {
@@ -116,36 +112,35 @@ class CvGenerator extends Component {
   };
 
   render() {
-    const {handleChange, onSubmitJob, onSubmitSchool, onSubmitSkill} = this
-    const {personalInfo, contactInfo, workExperience, education, skill} = this.state;
+    const {
+      handleChange, 
+      onSubmitJob, 
+      onSubmitSchool, 
+      onSubmitSkill
+    } = this
+
+    const {
+      personalInfo, 
+      contactInfo, 
+      workExperience, 
+      education, 
+      skill
+    } = this.state;
 
     return(
       <div>
-        <div id="header">
-          <h1>CV Generator</h1>
-        </div>
-        <div id="generator-container">
-          <div id="personal-info">
-            <h2>Personal Information</h2>
-            <PersonalForm personalInfo={personalInfo} handleChange={handleChange}/>
-          </div>
-          <div id="contact-info">
-            <h2>Contact Information</h2>
-            <ContactForm contactInfo={contactInfo} handleChange={handleChange}/>
-          </div>
-          <div id="work-experience">
-            <h2>Work Experience</h2>
-            <WorkForm workExperience={workExperience} handleChange={handleChange} onSubmitJob={onSubmitJob}/>
-          </div>
-          <div id="education">
-            <h2>Education</h2>
-            <EducationForm education={education} handleChange={handleChange} onSubmitSchool={onSubmitSchool}/>
-          </div>
-          <div id="expertise">
-            <h2>Expertise</h2>
-            <SkillForm skill={skill} handleChange={handleChange} onSubmitSkill={onSubmitSkill}/>
-          </div>
-        </div>
+        <Header />
+        <CvForm 
+          personalInfo={personalInfo}
+          contactInfo={contactInfo}
+          workExperience={workExperience}
+          education={education}
+          skill={skill}
+          handleChange={handleChange}
+          onSubmitJob={onSubmitJob}
+          onSubmitSchool={onSubmitSchool}
+          onSubmitSkill={onSubmitSkill}
+        />
       </div>
     );
   }

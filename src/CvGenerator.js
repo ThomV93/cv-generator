@@ -56,10 +56,10 @@ class CvGenerator extends Component {
     this.onSubmitSkill = this.onSubmitSkill.bind(this);
   };
 
-  /* Dynamic input event handler */
+  // Dynamic input handler
   handleChange = (e, parent) => {
     const value = e.target.value
-    /* Copy a version of the existing object and change only the necessary */
+    //Copy a version of the existing object and change only the necessary
     this.setState(prevState => ({
       ...prevState,
       [parent]: {
@@ -70,8 +70,10 @@ class CvGenerator extends Component {
   };
 
   onSubmitJob = e => {
+    // prevent default page refresh
     e.preventDefault();
     this.setState({
+      // add object to array and clear the values
       jobs: this.state.jobs.concat(this.state.workExperience),
       workExperience: {
         id: uniqid(),
@@ -128,7 +130,7 @@ class CvGenerator extends Component {
     } = this.state;
 
     return(
-      <div>
+      <div className="main-container">
         <Header />
         <CvForm 
           personalInfo={personalInfo}

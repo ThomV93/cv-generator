@@ -8,24 +8,24 @@ class PersonalForm extends Component {
 			<form>
 				<label htmlFor="name">First Name:</label>
 				<input 
-					type="text" 
 					name="name" 
+					type="text" 
 					placeholder="First name" 
 					value={personalInfo.name}
 					onChange={(e) => {handleChange(e, "personalInfo")}}>
 				</input>
 				<label htmlFor="lastName">Last Name:</label>
 				<input 
-					type="text" 
 					name="lastName" 
+					type="text" 
 					placeholder="Last name" 
 					value={personalInfo.lastName} 
 					onChange={(e) => {handleChange(e, "personalInfo")}}>
 				</input>
 				<label htmlFor="role">Current Role:</label>
 				<input 
+					name="role"
 					type="text" 
-					name="role" 
 					placeholder="Current role" 
 					value={personalInfo.role} 
 					onChange={(e) => {handleChange(e, "personalInfo")}}>

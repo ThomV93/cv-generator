@@ -8,8 +8,8 @@ class EducationForm extends Component {
       <form onSubmit={onSubmitSchool}>
         <label htmlFor="degree">Degree:</label>
         <input
-          type="text" 
           name="degree" 
+          type="text" 
           placeholder="Degree" 
           required 
           value={education.degree} 
@@ -17,8 +17,8 @@ class EducationForm extends Component {
         </input>
         <label htmlFor="school">School or University:</label>
         <input 
-          type="text" 
           name="school" 
+          type="text" 
           placeholder="School or University" 
           required 
           value={education.school} 
@@ -26,8 +26,8 @@ class EducationForm extends Component {
         </input>
         <label htmlFor="location">Location:</label>
         <input 
-          type="text" 
           name="location" 
+          type="text" 
           placeholder="Location" 
           required 
           value={education.location} 
@@ -35,16 +35,16 @@ class EducationForm extends Component {
         </input>
         <label htmlFor="from">From:</label>
         <input 
-          type="month" 
           name="from" 
+          type="month" 
           required 
           value={education.from} 
           onChange={(e) => {handleChange(e, "education")}}>
         </input>
         <label htmlFor="to">To:</label>
         <input 
-          type="month" 
           name="to" 
+          type="month" 
           required 
           value={education.to} 
           onChange={(e) => {handleChange(e, "education")}}>

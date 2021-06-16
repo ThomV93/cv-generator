@@ -8,8 +8,8 @@ class SkillForm extends Component {
       <form onSubmit={onSubmitSkill}>
         <label htmlFor="title">Relevant Skills:</label>
         <input 
-          type="text" 
           name="title" 
+          type="text" 
           placeholder="List your top skills" 
           required 
           value={skill.title} 

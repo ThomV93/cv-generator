@@ -8,8 +8,8 @@ class WorkForm extends Component {
       <form onSubmit={onSubmitJob}>
         <label htmlFor="position">Position:</label>
         <input 
-          type="text" 
           name="position" 
+          type="text" 
           placeholder="Position" 
           required 
           value={workExperience.position} 
@@ -17,8 +17,8 @@ class WorkForm extends Component {
         </input>
         <label htmlFor="company">Company:</label>
         <input 
-          type="text" 
           name="company" 
+          type="text" 
           placeholder="Company" 
           required 
           value={workExperience.company} 
@@ -26,8 +26,8 @@ class WorkForm extends Component {
         </input>
         <label htmlFor="location">Location:</label>
         <input 
-          type="text" 
           name="location" 
+          type="text" 
           placeholder="Location" 
           required 
           value={workExperience.location} 
@@ -35,16 +35,16 @@ class WorkForm extends Component {
         </input>
         <label htmlFor="from">From:</label>
         <input 
-          type="month" 
           name="from" 
+          type="month" 
           required 
           value={workExperience.from} 
           onChange={(e) => {handleChange(e, "workExperience")}}>
         </input>
         <label htmlFor="to">To:</label>
         <input 
-          type="month" 
           name="to" 
+          type="month" 
           required 
           value={workExperience.to} 
           onChange={(e) => {handleChange(e, "workExperience")}}>

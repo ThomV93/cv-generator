@@ -3,9 +3,9 @@ import { Component } from 'react'
 export class Header extends Component {
   render() {
     return (
-      <div className="header">
+      <header>
         <h1>CV Generator</h1>
-      </div>
+      </header>
     )
   }
 }

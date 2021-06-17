@@ -2,6 +2,7 @@ import { Component } from "react";
 import uniqid from "uniqid";
 import Header from "./components/Header";
 import CvForm from "./components/form/CvForm";
+import "./CvGenerator.scss";
 
 class CvGenerator extends Component {
   constructor(props) {

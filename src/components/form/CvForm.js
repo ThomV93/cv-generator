@@ -34,15 +34,15 @@ export class CvForm extends Component {
           <ContactForm contactInfo={contactInfo} handleChange={handleChange}/>
         </div>
         <div className="form">
-          <h2>Work Experience (<span>0</span>)</h2>
+          <h2>Work Experience <span>(0)</span></h2>
           <WorkForm workExperience={workExperience} handleChange={handleChange} onSubmitJob={onSubmitJob}/>
         </div>
         <div className="form">
-          <h2>Education (<span>0</span>)</h2>
+          <h2>Education <span>(0)</span></h2>
           <EducationForm education={education} handleChange={handleChange} onSubmitSchool={onSubmitSchool}/>
         </div>
         <div className="form">
-          <h2>Expertise (<span>0</span>)</h2>
+          <h2>Expertise <span>(0)</span></h2>
           <SkillForm skill={skill} handleChange={handleChange} onSubmitSkill={onSubmitSkill}/>
         </div>
       </div>

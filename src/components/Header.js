@@ -5,6 +5,7 @@ export class Header extends Component {
     return (
       <header>
         <h1>CV Generator</h1>
+        <button type="button">Preview</button>
       </header>
     )
   }

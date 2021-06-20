@@ -4,6 +4,7 @@ import EducationForm from "./EducationForm";
 import PersonalForm from "./PersonalForm";
 import SkillForm from "./SkillForm";
 import WorkForm from "./WorkForm";
+import "./styles/form.scss";
 
 
 export class CvForm extends Component {

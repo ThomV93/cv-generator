@@ -5,6 +5,7 @@ import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
 import ExpertisePreview from "./ExpertisePreview";
 import ProfilePreview from "./ProfilePreview";
+import "./styles/preview.scss";
 
 export class CvPreview extends Component {
   render() {

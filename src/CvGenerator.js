@@ -1,6 +1,6 @@
 import { Component } from "react";
 import uniqid from "uniqid";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import CvForm from "./components/form/CvForm";
 import CvPreview from "./components/preview/CvPreview";
 import "./CvGenerator.scss";
@@ -134,7 +134,7 @@ class CvGenerator extends Component {
     return(
       <div className="main-container">
         <Header />
-        {/*<CvForm
+        <CvForm
           personalInfo={personalInfo}
           contactInfo={contactInfo}
           workExperience={workExperience}
@@ -144,7 +144,7 @@ class CvGenerator extends Component {
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
-        />*/}
+        />
         <CvPreview />
       </div>
     );

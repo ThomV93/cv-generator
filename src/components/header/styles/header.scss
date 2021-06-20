@@ -1,0 +1,31 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  background-color: #24262a;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  h1 {
+    grid-column: 1/ 2;
+    color: #f7f7f7;
+    margin-left: auto;
+  }
+
+  button {
+    grid-column: 9/ 11;
+    width: auto;
+    background-color: #f76a07;
+    color: white;
+    padding: 14px 20px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #e86006;
+  }
+}

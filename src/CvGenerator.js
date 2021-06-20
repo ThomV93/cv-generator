@@ -50,6 +50,8 @@ class CvGenerator extends Component {
         title: "",
       },
       skills: [],
+
+      display: true,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -115,12 +117,19 @@ class CvGenerator extends Component {
     });
   };
 
+  togglePreview = () => {
+    this.setState(prevState => ({
+      display: !prevState.display,
+    }));
+  };
+
   render() {
     const {
       handleChange, 
       onSubmitJob, 
       onSubmitSchool, 
-      onSubmitSkill
+      onSubmitSkill,
+      togglePreview
     } = this
 
     const {
@@ -128,13 +137,16 @@ class CvGenerator extends Component {
       contactInfo, 
       workExperience, 
       education, 
-      skill
+      skill,
+      display
     } = this.state;
 
     return(
       <div className="main-container">
-        <Header />
-        <CvForm
+        <Header togglePreview={togglePreview}/>
+        {
+          display ?
+          <CvForm
           personalInfo={personalInfo}
           contactInfo={contactInfo}
           workExperience={workExperience}
@@ -144,8 +156,9 @@ class CvGenerator extends Component {
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
-        />
-        <CvPreview />
+          /> :
+          <CvPreview />
+        }
       </div>
     );
   }

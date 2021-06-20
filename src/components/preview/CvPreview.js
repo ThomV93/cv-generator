@@ -1,5 +1,5 @@
 import { Component } from "react";
-import icon from "../../icon.png";
+import profile from "../../icons/profile.png";
 import ContactPreview from "./ContactPreview";
 import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
@@ -12,7 +12,7 @@ export class CvPreview extends Component {
     return (
       <div className="preview-container">
         <div className="sidebar">
-          <img src={icon} alt="profile icon"/>
+          <img className="profile-img" src={profile} alt="profile icon"/>
           <ContactPreview />
           <EducationPreview />
           <ExpertisePreview />

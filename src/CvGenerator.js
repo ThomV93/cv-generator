@@ -134,7 +134,7 @@ class CvGenerator extends Component {
     return(
       <div className="main-container">
         <Header />
-        <CvForm 
+        {/*<CvForm
           personalInfo={personalInfo}
           contactInfo={contactInfo}
           workExperience={workExperience}
@@ -144,7 +144,7 @@ class CvGenerator extends Component {
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
-        />
+        />*/}
         <CvPreview />
       </div>
     );

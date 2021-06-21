@@ -4,7 +4,7 @@ export class ExperiencePreview extends Component {
   render() {
     return (
       <div className="experience-preview">
-        <h3>Experience</h3>
+        <h3>Professional Experience</h3>
         <div className="experience-item">
           <h4>Senior Frontend Developer</h4>
           <div className="company-details">

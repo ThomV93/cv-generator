@@ -21,7 +21,7 @@ export class CvPreview extends Component {
         </div>
         <div className="main-section">
           <h1 className="user-name">John <span>Doe</span></h1>
-          <h2 className="professional-position">Frontend Developer</h2>
+          <h2 className="professional-position">Senior Frontend Developer</h2>
           <ProfilePreview />
           <ExperiencePreview />
         </div>

@@ -4,14 +4,13 @@ $border: 1px solid #464648;
 .preview-container {
   display: grid;
   color: #464648;
-  grid-template-columns: repeat(10, 100px);
+  grid-template-columns: repeat(10, 1fr);
   box-shadow: $container-shadow;
   background-color: #fff;
   margin: 120px 0 50px 0;
   border-radius: 5px;
-  width: 1000px;
-  min-height: 1300px;
-  height: auto;
+  width: 1003.94px;
+  height: 1299.21px;
 }
 
 p {

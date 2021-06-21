@@ -14,10 +14,11 @@ header {
   }
 
   button {
+    font-size: 0.95rem;
     grid-column: 9/ 11;
-    width: auto;
+    width: 100px;
     background-color: #f76a07;
-    color: white;
+    color: #fff;
     padding: 14px 20px;
     margin: auto;
     border: none;

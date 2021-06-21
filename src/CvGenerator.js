@@ -64,6 +64,7 @@ class CvGenerator extends Component {
     this.onSubmitJob = this.onSubmitJob.bind(this);
     this.onSubmitSchool = this.onSubmitSchool.bind(this);
     this.onSubmitSkill = this.onSubmitSkill.bind(this);
+    this.onSubmitLenguage = this.onSubmitLenguage.bind(this);
   };
 
   // Dynamic input handler
@@ -162,21 +163,21 @@ class CvGenerator extends Component {
 
     return(
       <div className="main-container">
-        <Header togglePreview={togglePreview}/>
+        <Header togglePreview={togglePreview} display={display}/>
         {
           display ?
           <CvForm
-          personalInfo={personalInfo}
-          contactInfo={contactInfo}
-          workExperience={workExperience}
-          education={education}
-          skill={skill}
-          lenguage={lenguage}
-          handleChange={handleChange}
-          onSubmitJob={onSubmitJob}
-          onSubmitSchool={onSubmitSchool}
-          onSubmitSkill={onSubmitSkill}
-          onSubmitLenguage={onSubmitLenguage}
+            personalInfo={personalInfo}
+            contactInfo={contactInfo}
+            workExperience={workExperience}
+            education={education}
+            skill={skill}
+            lenguage={lenguage}
+            handleChange={handleChange}
+            onSubmitJob={onSubmitJob}
+            onSubmitSchool={onSubmitSchool}
+            onSubmitSkill={onSubmitSkill}
+            onSubmitLenguage={onSubmitLenguage}
           /> :
           <CvPreview />
         }

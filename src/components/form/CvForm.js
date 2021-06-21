@@ -4,6 +4,7 @@ import EducationForm from "./EducationForm";
 import PersonalForm from "./PersonalForm";
 import SkillForm from "./SkillForm";
 import WorkForm from "./WorkForm";
+import LenguageForm from './LenguageForm';
 import "./styles/form.scss";
 
 
@@ -14,14 +15,16 @@ export class CvForm extends Component {
       contactInfo, 
       workExperience, 
       education, 
-      skill
+      skill,
+      lenguage
     } = this.props;
 
     const {
       handleChange, 
       onSubmitJob, 
       onSubmitSchool, 
-      onSubmitSkill
+      onSubmitSkill,
+      onSubmitLenguage
     } = this.props;
 
     return (
@@ -45,6 +48,10 @@ export class CvForm extends Component {
         <div className="form">
           <h2>Expertise <span>(0)</span></h2>
           <SkillForm skill={skill} handleChange={handleChange} onSubmitSkill={onSubmitSkill}/>
+        </div>
+        <div className="form">
+          <h2>Lenguage <span>(0)</span></h2>
+          <LenguageForm lenguage={lenguage} handleChange={handleChange} onSubmitLenguage={onSubmitLenguage}/>
         </div>
       </div>
     )

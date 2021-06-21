@@ -37,6 +37,17 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
     margin: 1.3rem 0 0.6rem 0;
   }
 
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
   .contact-preview {
     grid-row: 3/ 6;
 
@@ -51,7 +62,7 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
   }
 
   .education-preview {
-    grid-row: 6/ 13;
+    grid-row: 6/ 11;
 
     p {
       margin: 0.8rem;
@@ -69,7 +80,11 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
   }
 
   .expertise-preview {
-    grid-row: 13/ -1;
+    grid-row: 11/ 14;
+  }
+  
+  .lenguage-preview {
+    grid-row: 14/ -1;
   }
 }
 

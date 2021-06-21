@@ -4,6 +4,7 @@ import ContactPreview from "./ContactPreview";
 import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
 import ExpertisePreview from "./ExpertisePreview";
+import LenguagePreview from "./LenguagePreview";
 import ProfilePreview from "./ProfilePreview";
 import "./styles/preview.scss";
 
@@ -16,6 +17,7 @@ export class CvPreview extends Component {
           <ContactPreview />
           <EducationPreview />
           <ExpertisePreview />
+          <LenguagePreview />
         </div>
         <div className="main-section">
           <h1 className="user-name">John Doe</h1>

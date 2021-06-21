@@ -51,6 +51,12 @@ class CvGenerator extends Component {
       },
       skills: [],
 
+      lenguage: {
+        id: uniqid(),
+        title: "",
+      },
+      lenguages: [],
+
       display: true,
     }
 
@@ -117,6 +123,17 @@ class CvGenerator extends Component {
     });
   };
 
+  onSubmitLenguage = e => {
+    e.preventDefault();
+    this.setState({
+      lenguages: this.state.lenguages.concat(this.state.lenguage),
+      lenguage: {
+        id: uniqid(),
+        title: "",
+      },
+    });
+  };
+
   togglePreview = () => {
     this.setState(prevState => ({
       display: !prevState.display,
@@ -129,6 +146,7 @@ class CvGenerator extends Component {
       onSubmitJob, 
       onSubmitSchool, 
       onSubmitSkill,
+      onSubmitLenguage,
       togglePreview
     } = this
 
@@ -138,6 +156,7 @@ class CvGenerator extends Component {
       workExperience, 
       education, 
       skill,
+      lenguage,
       display
     } = this.state;
 
@@ -152,10 +171,12 @@ class CvGenerator extends Component {
           workExperience={workExperience}
           education={education}
           skill={skill}
+          lenguage={lenguage}
           handleChange={handleChange}
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
+          onSubmitLenguage={onSubmitLenguage}
           /> :
           <CvPreview />
         }

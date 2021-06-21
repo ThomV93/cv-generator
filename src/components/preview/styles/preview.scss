@@ -1,7 +1,9 @@
 $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+$border: 1px solid #464648;
 
 .preview-container {
   display: grid;
+  color: #464648;
   grid-template-columns: repeat(10, 100px);
   box-shadow: $container-shadow;
   background-color: #fff;
@@ -11,6 +13,20 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
   min-height: 1300px;
   height: auto;
 }
+
+p {
+  line-height: 1.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 200;
+  border-bottom: $border;
+  padding-bottom: 10px;
+  margin: 3.5rem 0 0.6rem 0;
+}
+
+/* sidebar preview section */
 
 .sidebar {
   display: grid;
@@ -29,11 +45,8 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
   }
 
   h3 {
-    font-size: 2rem;
-    font-weight: 200;
     text-align: center;
     border-bottom: 1px solid #fff;
-    padding-bottom: 10px;
     margin: 1.3rem 0 0.6rem 0;
   }
 
@@ -80,17 +93,60 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
   }
 
   .expertise-preview {
-    grid-row: 11/ 14;
+    grid-row: 11/ 15;
   }
   
   .lenguage-preview {
-    grid-row: 14/ -1;
+    grid-row: 15/ -1;
   }
 }
+
+/* Main preview section */
 
 .main-section {
   color: #464648;
   background-color: #fff;
   grid-column: 4/ -1;
   padding: 35px;
+
+  h1 {
+    font-weight: lighter;
+    font-size: 3.9rem;
+    text-align: center;
+    margin: 1.5rem 0 0.8rem 0;
+  }
+
+  h2 {
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 4.6rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.2rem 0;
+  }
+
+  span {
+    font-weight: normal;
+  }
+
+  .company-details {
+    display: flex;
+
+    p {
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    .location {
+      border-right: $border;
+      border-left: $border;
+      padding: 0 0.4rem 0 0.4rem;
+      margin: 0.2rem 0.4rem 0.5rem 0.4rem;
+    }
+  }
+
+  .experience-description {
+    margin: 0.2rem 0 2.8rem 0;
+  }
 }

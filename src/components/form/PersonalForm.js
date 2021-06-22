@@ -8,7 +8,7 @@ class PersonalForm extends Component {
 			<form>
 				<label htmlFor="name">First Name:</label>
 				<input 
-					name="name" 
+					name="name"
 					type="text" 
 					placeholder="First name" 
 					value={personalInfo.name}

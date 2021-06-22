@@ -174,9 +174,13 @@ class CvGenerator extends Component {
             personalInfo={personalInfo}
             contactInfo={contactInfo}
             workExperience={workExperience}
+            jobs={jobs}
             education={education}
+            schools={schools}
             skill={skill}
+            skills={skills}
             lenguage={lenguage}
+            lenguages={lenguages}
             handleChange={handleChange}
             onSubmitJob={onSubmitJob}
             onSubmitSchool={onSubmitSchool}

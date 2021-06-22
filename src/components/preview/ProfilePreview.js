@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 
 export class ProfilePreview extends Component {
   render() {
+
+    const {personalInfo} = this.props;
+
     return (
       <div className="profile-preview">
+        <h1 className="user-name">{personalInfo.name} <span>{personalInfo.lastName}</span></h1>
+        <h2 className="professional-position">{personalInfo.role}</h2>
         <h3>Profile</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-          numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-          optio, eaque rerum! Provident similique accusantium nemo autem.
+          {personalInfo.profile}
         </p>
       </div>
     )

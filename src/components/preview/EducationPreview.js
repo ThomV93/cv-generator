@@ -2,19 +2,21 @@ import React, { Component } from 'react'
 
 export class EducationPreview extends Component {
   render() {
+    const {schools} = this.props;
+
     return (
       <div className="education-preview">
         <h3>Education</h3>
-        <div className="education-item">
-          <p className="degree">YOUR DEGREE</p>
-          <p>New York University</p>
-          <p><span>2017</span> - <span>2020</span></p>
-        </div>
-        <div className="education-item">
-          <p className="degree">YOUR DEGREE</p>
-          <p>Harvard University</p>
-          <p><span>2021</span> - <span>2022</span></p>
-        </div>
+        {schools.map(school => {
+          return(
+            <div className="education-item">
+              <p className="degree">{school.degree}</p>
+              <p>{school.school}</p>
+              <p>{school.location}</p>
+              <p><span>{school.from}</span> - <span>{school.to}</span></p>
+            </div>
+          )
+        })}
       </div>
     )
   }

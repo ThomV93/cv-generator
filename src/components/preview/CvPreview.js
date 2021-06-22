@@ -10,20 +10,27 @@ import "./styles/preview.scss";
 
 export class CvPreview extends Component {
   render() {
+    const {
+      personalInfo,
+      contactInfo,
+      jobs,
+      schools,
+      skills,
+      lenguages
+    } = this.props
+
     return (
       <div className="preview-container">
         <div className="sidebar">
           <img className="profile-img" src={profile} alt="profile icon"/>
-          <ContactPreview />
-          <EducationPreview />
-          <ExpertisePreview />
-          <LenguagePreview />
+          <ContactPreview contactInfo={contactInfo}/>
+          <EducationPreview schools={schools}/>
+          <ExpertisePreview skills={skills}/>
+          <LenguagePreview lenguages={lenguages}/>
         </div>
         <div className="main-section">
-          <h1 className="user-name">John <span>Doe</span></h1>
-          <h2 className="professional-position">Senior Frontend Developer</h2>
-          <ProfilePreview />
-          <ExperiencePreview />
+          <ProfilePreview personalInfo={personalInfo}/>
+          <ExperiencePreview jobs={jobs}/>
         </div>
       </div>
     )

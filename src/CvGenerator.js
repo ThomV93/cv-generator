@@ -154,10 +154,14 @@ class CvGenerator extends Component {
     const {
       personalInfo, 
       contactInfo, 
-      workExperience, 
-      education, 
+      workExperience,
+      jobs,
+      education,
+      schools, 
       skill,
+      skills,
       lenguage,
+      lenguages,
       display
     } = this.state;
 
@@ -179,7 +183,14 @@ class CvGenerator extends Component {
             onSubmitSkill={onSubmitSkill}
             onSubmitLenguage={onSubmitLenguage}
           /> :
-          <CvPreview />
+          <CvPreview 
+            personalInfo={personalInfo}
+            contactInfo={contactInfo}
+            jobs={jobs}
+            schools={schools}
+            skills={skills}
+            lenguages={lenguages}
+          />
         }
       </div>
     );

@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 export class LenguagePreview extends Component {
   render() {
+    const {lenguages} = this.props;
+
     return (
       <div className="lenguage-preview">
         <h3>Lenguage(s)</h3>
         <ul className="lenguage-container">
-          <li>English</li>
-          <li>Portuguese</li>
-          <li>German</li>
+          {lenguages.map(lenguage => {
+            return(
+              <li>{lenguage.title}</li>
+            )
+          })}
         </ul>
       </div>
     )

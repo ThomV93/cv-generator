@@ -10,7 +10,7 @@ export class LenguagePreview extends Component {
         <ul className="lenguage-container">
           {lenguages.map(lenguage => {
             return(
-              <li>{lenguage.title}</li>
+              <li key={lenguage.id}>{lenguage.title}</li>
             )
           })}
         </ul>

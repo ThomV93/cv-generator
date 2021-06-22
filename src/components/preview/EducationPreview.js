@@ -9,7 +9,7 @@ export class EducationPreview extends Component {
         <h3>Education</h3>
         {schools.map(school => {
           return(
-            <div className="education-item">
+            <div className="education-item" key={school.id}>
               <p className="degree">{school.degree}</p>
               <p>{school.school}</p>
               <p>{school.location}</p>

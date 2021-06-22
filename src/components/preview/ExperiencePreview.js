@@ -9,7 +9,7 @@ export class ExperiencePreview extends Component {
         <h3>Professional Experience</h3>
         {jobs.map(job => {
           return(
-            <div className="experience-item">
+            <div className="experience-item" key={job.id}>
               <h4>{job.position}</h4>
               <div className="company-details">
                 <p>{job.company}</p>

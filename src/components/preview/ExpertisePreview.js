@@ -10,7 +10,7 @@ export class ExpertisePreview extends Component {
         <ul className="expertise-container">
           {skills.map(skill => {
             return(
-              <li>{skill.title}</li>
+              <li key={skill.id}>{skill.title}</li>
             )
           })}
         </ul>

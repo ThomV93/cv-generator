@@ -1,77 +1,67 @@
-import { Component } from "react";
+import { useState } from "react";
 import uniqid from "uniqid";
 import Header from "./components/header/Header";
 import CvForm from "./components/form/CvForm";
 import CvPreview from "./components/preview/CvPreview";
 import "./CvGenerator.scss";
 
-class CvGenerator extends Component {
-  constructor(props) {
-    super(props)
+const CvGenerator = () => {
+  const [user, setUser] = useState({
+    personalInfo: {
+      name: "",
+      lastName: "",
+      role: "",
+      profile: "",
+    },
 
-    this.state = {
-      personalInfo: {
-        name: "",
-        lastName: "",
-        role: "",
-        profile: "",
-      },
+    contactInfo: {
+      email: "",
+      phone: "",
+      location: "",
+      site: "",
+    },
 
-      contactInfo: {
-        email: "",
-        phone: "",
-        location: "",
-        site: "",
-      },
+    workExperience: {
+      id: uniqid(),
+      position: "",
+      company: "",
+      location: "",
+      from: "",
+      to: "",
+      description: "",
+    },
+    jobs: [],
 
-      workExperience: {
-        id: uniqid(),
-        position: "",
-        company: "",
-        location: "",
-        from: "",
-        to: "",
-        description: "",
-      },
-      jobs: [],
+    education: {
+      id: uniqid(),
+      degree: "",
+      school: "",
+      location: "",
+      from: "",
+      to: "",
+    },
+    schools: [],
 
-      education: {
-        id: uniqid(),
-        degree: "",
-        school: "",
-        location: "",
-        from: "",
-        to: "",
-      },
-      schools: [],
+    skill: {
+      id: uniqid(),
+      title: "",
+    },
+    skills: [],
 
-      skill: {
-        id: uniqid(),
-        title: "",
-      },
-      skills: [],
+    lenguage: {
+      id: uniqid(),
+      title: "",
+    },
+    lenguages: [],
+  });
 
-      lenguage: {
-        id: uniqid(),
-        title: "",
-      },
-      lenguages: [],
-
-      display: true,
-    }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.onSubmitJob = this.onSubmitJob.bind(this);
-    this.onSubmitSchool = this.onSubmitSchool.bind(this);
-    this.onSubmitSkill = this.onSubmitSkill.bind(this);
-    this.onSubmitLenguage = this.onSubmitLenguage.bind(this);
-  };
+  const [display, setDisplay] = useState(true);
 
   // Dynamic input handler
-  handleChange = (e, parent) => {
+  const handleChange = (e, parent) => {
     const value = e.target.value
     //Copy a version of the existing object and change only the necessary
-    this.setState(prevState => ({
+    setUser(prevState => ({
       ...prevState,
       [parent]: {
         ...prevState[parent],
@@ -80,12 +70,13 @@ class CvGenerator extends Component {
     }))
   };
 
-  onSubmitJob = e => {
+  const onSubmitJob = e => {
     // prevent default page refresh
     e.preventDefault();
-    this.setState({
+    setUser({
+      ...user,
       // add object to array and clear the values
-      jobs: this.state.jobs.concat(this.state.workExperience),
+      jobs: jobs.concat(workExperience),
       workExperience: {
         id: uniqid(),
         position: "",
@@ -98,10 +89,11 @@ class CvGenerator extends Component {
     });
   };
 
-  onSubmitSchool = e => {
+  const onSubmitSchool = e => {
     e.preventDefault();
-    this.setState({
-      schools: this.state.schools.concat(this.state.education),
+    setUser({
+      ...user,
+      schools: schools.concat(education),
       education: {
         id: uniqid(),
         degree: "",
@@ -113,10 +105,11 @@ class CvGenerator extends Component {
     });
   };
 
-  onSubmitSkill = e => {
+  const onSubmitSkill = e => {
     e.preventDefault();
-    this.setState({
-      skills: this.state.skills.concat(this.state.skill),
+    setUser({
+      ...user,
+      skills: skills.concat(skill),
       skill: {
         id: uniqid(),
         title: "",
@@ -124,10 +117,11 @@ class CvGenerator extends Component {
     });
   };
 
-  onSubmitLenguage = e => {
+  const onSubmitLenguage = e => {
     e.preventDefault();
-    this.setState({
-      lenguages: this.state.lenguages.concat(this.state.lenguage),
+    setUser({
+      ...user,
+      lenguages: lenguages.concat(lenguage),
       lenguage: {
         id: uniqid(),
         title: "",
@@ -135,70 +129,56 @@ class CvGenerator extends Component {
     });
   };
 
-  togglePreview = () => {
-    this.setState(prevState => ({
-      display: !prevState.display,
-    }));
+  const togglePreview = () => {
+    setDisplay(display => !display);
   };
+  
+  const {
+    personalInfo, 
+    contactInfo, 
+    workExperience,
+    jobs,
+    education,
+    schools, 
+    skill,
+    skills,
+    lenguage,
+    lenguages
+  } = user;
 
-  render() {
-    const {
-      handleChange, 
-      onSubmitJob, 
-      onSubmitSchool, 
-      onSubmitSkill,
-      onSubmitLenguage,
-      togglePreview
-    } = this
-
-    const {
-      personalInfo, 
-      contactInfo, 
-      workExperience,
-      jobs,
-      education,
-      schools, 
-      skill,
-      skills,
-      lenguage,
-      lenguages,
-      display
-    } = this.state;
-
-    return(
-      <div className="main-container">
-        <Header togglePreview={togglePreview} display={display}/>
-        {
-          display ?
-          <CvForm
-            personalInfo={personalInfo}
-            contactInfo={contactInfo}
-            workExperience={workExperience}
-            jobs={jobs}
-            education={education}
-            schools={schools}
-            skill={skill}
-            skills={skills}
-            lenguage={lenguage}
-            lenguages={lenguages}
-            handleChange={handleChange}
-            onSubmitJob={onSubmitJob}
-            onSubmitSchool={onSubmitSchool}
-            onSubmitSkill={onSubmitSkill}
-            onSubmitLenguage={onSubmitLenguage}
-          /> :
-          <CvPreview 
-            personalInfo={personalInfo}
-            contactInfo={contactInfo}
-            jobs={jobs}
-            schools={schools}
-            skills={skills}
-            lenguages={lenguages}
-          />
-        }
-      </div>
-    );
-  }
+  return(
+    <div className="main-container">
+      <Header togglePreview={togglePreview} display={display}/>
+      {
+        display ?
+        <CvForm
+          personalInfo={personalInfo}
+          contactInfo={contactInfo}
+          workExperience={workExperience}
+          jobs={jobs}
+          education={education}
+          schools={schools}
+          skill={skill}
+          skills={skills}
+          lenguage={lenguage}
+          lenguages={lenguages}
+          handleChange={handleChange}
+          onSubmitJob={onSubmitJob}
+          onSubmitSchool={onSubmitSchool}
+          onSubmitSkill={onSubmitSkill}
+          onSubmitLenguage={onSubmitLenguage}
+        /> :
+        <CvPreview 
+          personalInfo={personalInfo}
+          contactInfo={contactInfo}
+          jobs={jobs}
+          schools={schools}
+          skills={skills}
+          lenguages={lenguages}
+        />
+      }
+    </div>
+  );
 }
 
 export default CvGenerator;

@@ -1,14 +1,15 @@
-import profile from "../../icons/profile.png";
 import ContactPreview from "./ContactPreview";
 import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
 import ExpertisePreview from "./ExpertisePreview";
 import LenguagePreview from "./LenguagePreview";
 import ProfilePreview from "./ProfilePreview";
+import profile from "../../icons/profile.png";
 import "./styles/preview.scss";
 
 const CvPreview = props => {
   const {
+    userImage,
     personalInfo,
     contactInfo,
     jobs,
@@ -20,7 +21,7 @@ const CvPreview = props => {
   return (
     <div className="preview-container">
       <div className="sidebar">
-        <img className="profile-img" src={profile} alt="profile icon"/>
+        <img className="profile-img" src={userImage.imagePreviewUrl === "" ? profile : userImage.imagePreviewUrl} alt="profile icon"/>
         <ContactPreview contactInfo={contactInfo}/>
         <EducationPreview schools={schools}/>
         <ExpertisePreview skills={skills}/>

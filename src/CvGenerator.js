@@ -55,7 +55,22 @@ const CvGenerator = () => {
     lenguages: [],
   });
 
+  const [userImage, setUserImage] = useState({file: "", imagePreviewUrl: ""});
+
   const [display, setDisplay] = useState(true);
+
+  const handleImage = e =>{
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = e.target.files[0];
+    reader.onloadend = () => {
+      setUserImage({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+    }
+    reader.readAsDataURL(file);
+  }
 
   // Dynamic input handler
   const handleChange = (e, parent) => {
@@ -162,13 +177,16 @@ const CvGenerator = () => {
           skills={skills}
           lenguage={lenguage}
           lenguages={lenguages}
+          userImage={userImage}
+          handleImage={handleImage}
           handleChange={handleChange}
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
           onSubmitLenguage={onSubmitLenguage}
         /> :
-        <CvPreview 
+        <CvPreview
+          userImage={userImage}
           personalInfo={personalInfo}
           contactInfo={contactInfo}
           jobs={jobs}

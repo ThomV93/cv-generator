@@ -18,10 +18,12 @@ const CvForm = props => {
     skills,
     lenguage,
     lenguages,
+    userImage
   } = props;
 
   const {
-    handleChange, 
+    handleChange,
+    handleImage,
     onSubmitJob, 
     onSubmitSchool, 
     onSubmitSkill,
@@ -33,8 +35,10 @@ const CvForm = props => {
       <div className="form">
         <h2>Personal Information</h2>
         <PersonalForm 
-          personalInfo={personalInfo} 
+          personalInfo={personalInfo}
+          userImage={userImage}
           handleChange={handleChange}
+          handleImage={handleImage}
         />
       </div>
       <div className="form">

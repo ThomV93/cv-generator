@@ -1,5 +1,5 @@
 const PersonalForm = props => {
-	const {handleChange, personalInfo} = props;
+	const {handleImage, handleChange, personalInfo, userImage} = props;
 
   return(
     <form>
@@ -18,6 +18,14 @@ const PersonalForm = props => {
         placeholder="Last name" 
         value={personalInfo.lastName} 
         onChange={e => {handleChange(e, "personalInfo")}}>
+      </input>
+      <label htmlFor="userImage">Profile Image:</label>
+      <input
+        style={userImage.imagePreviewUrl === "" ? {backgroundColor: "#fff"} : {backgroundColor: "#e9fce9"}}
+        name="userImage"
+        type="file"
+        accept="image/jpeg, image/png"
+        onChange={e =>{handleImage(e)}}>
       </input>
       <label htmlFor="role">Current Role:</label>
       <input 

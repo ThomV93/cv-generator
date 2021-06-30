@@ -24,6 +24,7 @@ const CvForm = props => {
   const {
     handleChange,
     handleImage,
+    handleReset,
     onSubmitJob, 
     onSubmitSchool, 
     onSubmitSkill,
@@ -52,7 +53,8 @@ const CvForm = props => {
         <h2>Work Experience <span>({jobs.length})</span></h2>
         <WorkForm 
           workExperience={workExperience} 
-          handleChange={handleChange} 
+          handleChange={handleChange}
+          handleReset={handleReset}
           onSubmitJob={onSubmitJob}
         />
       </div>
@@ -61,6 +63,7 @@ const CvForm = props => {
         <EducationForm 
           education={education} 
           handleChange={handleChange} 
+          handleReset={handleReset}
           onSubmitSchool={onSubmitSchool}
         />
       </div>
@@ -68,7 +71,7 @@ const CvForm = props => {
         <h2>Expertise <span>({skills.length})</span></h2>
         <SkillForm 
           skill={skill} 
-          handleChange={handleChange} 
+          handleChange={handleChange}
           onSubmitSkill={onSubmitSkill}
         />
       </div>
@@ -76,7 +79,7 @@ const CvForm = props => {
         <h2>Lenguage <span>({lenguages.length})</span></h2>
         <LenguageForm 
           lenguage={lenguage} 
-          handleChange={handleChange} 
+          handleChange={handleChange}
           onSubmitLenguage={onSubmitLenguage}
         />
       </div>

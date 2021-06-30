@@ -60,7 +60,6 @@ const CvGenerator = () => {
   const [display, setDisplay] = useState(true);
 
   const handleImage = e =>{
-    e.preventDefault();
     const reader = new FileReader();
     const file = e.target.files[0];
     reader.onloadend = () => {
@@ -74,7 +73,7 @@ const CvGenerator = () => {
 
   // Dynamic input handler
   const handleChange = (e, parent) => {
-    const value = e.target.value
+    const value = e.target.value;
     //Copy a version of the existing object and change only the necessary
     setUser(prevState => ({
       ...prevState,
@@ -83,6 +82,22 @@ const CvGenerator = () => {
         [e.target.name]: value,
       }
     }))
+  };
+
+  const handleReset = (e, parent) => {
+    e.preventDefault();
+    const obj = user[parent];
+    for(let key in obj){
+      if(key !== "id"){
+        setUser(prevState => ({
+          ...prevState,
+          [parent]: {
+            ...prevState[parent],
+            [key]: "",
+          }
+        }))
+      }
+    };
   };
 
   const onSubmitJob = e => {
@@ -180,6 +195,7 @@ const CvGenerator = () => {
           userImage={userImage}
           handleImage={handleImage}
           handleChange={handleChange}
+          handleReset={handleReset}
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}

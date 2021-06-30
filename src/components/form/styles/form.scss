@@ -39,6 +39,9 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
     }
   
     button {
+      &[type="reset"]{
+        background-color: #252739;
+      }
       width: 100%;
       background-color: #4CAF50;
       color: white;
@@ -50,6 +53,9 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
     }
 
     button:hover {
+      &[type="reset"]{
+        background-color: #fb685d;
+      }
       background-color: #45a049;
     }
   }

@@ -1,8 +1,8 @@
 const WorkForm = props => {
-  const {onSubmitJob, handleChange, workExperience} = props;
+  const {onSubmitJob, handleReset, handleChange, workExperience} = props;
 
   return(
-    <form onSubmit={onSubmitJob}>
+    <form onReset={e => {handleReset(e, "workExperience")}} onSubmit={onSubmitJob}>
       <label htmlFor="position">Position:</label>
       <input 
         name="position" 
@@ -53,7 +53,8 @@ const WorkForm = props => {
         value={workExperience.description} 
         onChange={e => {handleChange(e, "workExperience")}}>
       </textarea>
-      <button type="submit">Add job</button>
+      <button type="reset">Clear</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };

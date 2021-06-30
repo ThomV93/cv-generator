@@ -1,8 +1,8 @@
 const EducationForm = props => {
-  const {onSubmitSchool, handleChange, education} = props;
+  const {onSubmitSchool, handleReset, handleChange, education} = props;
 
   return(
-    <form onSubmit={onSubmitSchool}>
+    <form onReset={e => {handleReset(e, "education")}} onSubmit={onSubmitSchool}>
       <label htmlFor="degree">Degree:</label>
       <input
         name="degree" 
@@ -46,6 +46,7 @@ const EducationForm = props => {
         value={education.to} 
         onChange={e => {handleChange(e, "education")}}>
       </input>
+      <button type="reset">Clear</button>
       <button type="submit">Submit</button>
     </form>
   );

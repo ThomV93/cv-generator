@@ -1,5 +1,10 @@
 const LenguageForm = props => {
-  const {onSubmitLenguage, handleChange, lenguage} = props;
+  const {
+    lenguage,
+    handleChange,
+    handleArrayReset, 
+    onSubmitLenguage, 
+  } = props;
 
   return(
     <form onSubmit={onSubmitLenguage}>
@@ -12,6 +17,7 @@ const LenguageForm = props => {
         value={lenguage.title} 
         onChange={e => {handleChange(e, "lenguage")}}>
       </input>
+      <button type="button" onClick={() => {handleArrayReset("lenguages")}}>Clear List</button>
       <button type="submit">Submit</button>
     </form>
   );

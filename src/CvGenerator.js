@@ -55,10 +55,13 @@ const CvGenerator = () => {
     lenguages: [],
   });
 
+  // User image state
   const [userImage, setUserImage] = useState({file: "", imagePreviewUrl: ""});
 
+  // Display toggle state
   const [display, setDisplay] = useState(true);
 
+  // Store and treat the file to a readable format
   const handleImage = e =>{
     const reader = new FileReader();
     const file = e.target.files[0];
@@ -84,6 +87,7 @@ const CvGenerator = () => {
     }))
   };
 
+  // Handle the reset of values in a subsection of the form
   const handleReset = (e, parent) => {
     e.preventDefault();
     const obj = user[parent];
@@ -99,6 +103,14 @@ const CvGenerator = () => {
       }
     };
   };
+
+  // Clear on of the subsection arrays
+  const handleArrayReset = arr => {
+    setUser({
+      ...user,
+      [arr]: [],
+    })
+  }
 
   const onSubmitJob = e => {
     // prevent default page refresh
@@ -159,6 +171,7 @@ const CvGenerator = () => {
     });
   };
 
+  // Toggle display boolean
   const togglePreview = () => {
     setDisplay(display => !display);
   };
@@ -196,6 +209,7 @@ const CvGenerator = () => {
           handleImage={handleImage}
           handleChange={handleChange}
           handleReset={handleReset}
+          handleArrayReset={handleArrayReset}
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}

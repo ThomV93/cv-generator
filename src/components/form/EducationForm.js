@@ -1,5 +1,11 @@
 const EducationForm = props => {
-  const {onSubmitSchool, handleReset, handleChange, education} = props;
+  const {
+    education,
+    handleChange, 
+    handleReset,
+    handleArrayReset, 
+    onSubmitSchool
+  } = props;
 
   return(
     <form onReset={e => {handleReset(e, "education")}} onSubmit={onSubmitSchool}>
@@ -46,7 +52,8 @@ const EducationForm = props => {
         value={education.to} 
         onChange={e => {handleChange(e, "education")}}>
       </input>
-      <button type="reset">Clear</button>
+      <button type="button" onClick={() => {handleArrayReset("schools")}}>Clear List</button>
+      <button type="reset">Reset</button>
       <button type="submit">Submit</button>
     </form>
   );

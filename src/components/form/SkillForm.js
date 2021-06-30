@@ -1,5 +1,10 @@
 const SkillForm = props => {
-  const {onSubmitSkill, handleChange, skill} = props;
+  const {
+    skill,
+    handleChange,
+    handleArrayReset,
+    onSubmitSkill, 
+  } = props;
 
   return(
     <form onSubmit={onSubmitSkill}>
@@ -12,6 +17,7 @@ const SkillForm = props => {
         value={skill.title} 
         onChange={e => {handleChange(e, "skill")}}>
       </input>
+      <button type="button" onClick={() => {handleArrayReset("skills")}}>Clear List</button>
       <button type="submit">Submit</button>
     </form>
   );

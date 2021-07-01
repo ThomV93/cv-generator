@@ -37,15 +37,26 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
       resize: none;
       overflow: scroll;
     }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        width: 49%;
+      };
+    }
   
     button {
       &[type="reset"]{
         background-color: #252739;
       }
       &[type="button"]{
-        background-color: #fb685d;
+        background-color: #252739;
       }
       width: 100%;
+      font-size: 0.9rem;
       background-color: #4CAF50;
       color: white;
       padding: 16px 20px;
@@ -57,10 +68,11 @@ $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24
 
     button:hover {
       &[type="reset"]{
-        background-color: #24262a;
+        background-color: #ffef5e;
+        color: #000;
       }
       &[type="button"]{
-        background-color: #fc5549;
+        background-color: #ff2f2f;
       }
       background-color: #45a049;
     }

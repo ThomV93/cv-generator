@@ -1,5 +1,10 @@
 const PersonalForm = props => {
-	const {handleImage, handleChange, personalInfo, userImage} = props;
+	const {
+    personalInfo, 
+    userImage,
+    handleImage, 
+    handleChange, 
+  } = props;
 
   return(
     <form>

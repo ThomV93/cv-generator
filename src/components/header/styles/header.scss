@@ -1,3 +1,14 @@
+%button {
+  font-size: 0.9rem;
+  width: 120px;
+  background-color: #f76a07;
+  color: #fff;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 header {
   display: grid;
   grid-template-columns: repeat(1fr, 12);
@@ -13,17 +24,16 @@ header {
     margin-left: auto;
   }
 
-  button {
-    font-size: 0.95rem;
-    grid-column: 9/ 11;
-    width: 100px;
-    background-color: #f76a07;
-    color: #fff;
-    padding: 14px 20px;
-    margin: auto;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  .reset-print-btn{
+    @extend %button;
+    grid-column: 9;
+    margin: auto 8px auto auto;
+  }
+
+  .preview-form-btn{
+    @extend %button;
+    grid-column: 10;
+    margin: auto auto auto 8px;
   }
 
   button:hover {

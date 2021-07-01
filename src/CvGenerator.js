@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import Header from "./components/header/Header";
 import CvForm from "./components/form/CvForm";
 import CvPreview from "./components/preview/CvPreview";
+import initialUserState from "./components/form/initialUserState";
 import "./CvGenerator.scss";
 
 const CvGenerator = () => {
@@ -60,6 +61,10 @@ const CvGenerator = () => {
 
   // Display toggle state
   const [display, setDisplay] = useState(true);
+
+  const resetState = () => {
+    setUser(initialUserState);
+  };
 
   // Store and treat the file to a readable format
   const handleImage = e =>{
@@ -191,7 +196,11 @@ const CvGenerator = () => {
 
   return(
     <div className="main-container">
-      <Header togglePreview={togglePreview} display={display}/>
+      <Header
+        resetState={resetState}
+        togglePreview={togglePreview} 
+        display={display}
+      />
       {
         display ?
         <CvForm

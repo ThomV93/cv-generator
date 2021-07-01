@@ -1,7 +1,11 @@
 import "./styles/header.scss";
 
 const Header = props => {
-  const { togglePreview, display } = props;
+  const {
+    resetState,
+    togglePreview, 
+    display 
+  } = props;
 
   return (
     <header>
@@ -9,13 +13,14 @@ const Header = props => {
       <button
         className="reset-print-btn"
         type="button"
+        onClick={() => {resetState()}}
         style={{backgroundColor: display ? "#ff2f2f" : "#4CAF50"}}>
           {display ? "Reset All" : "Print PDF"}
       </button>
       <button 
         className="preview-form-btn"
         type="button" 
-        onClick={() => { togglePreview()} }>
+        onClick={() => {togglePreview()} }>
           {display ? "Preview" : "Form"}
       </button>
     </header>

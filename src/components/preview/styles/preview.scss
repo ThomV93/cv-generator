@@ -1,6 +1,17 @@
 $container-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
 $border: 1px solid #464648;
 
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
 .preview-container {
   display: grid;
   color: #464648;

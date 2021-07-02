@@ -3,6 +3,7 @@ import "./styles/header.scss";
 const Header = props => {
   const {
     resetState,
+    handlePrint,
     togglePreview, 
     display 
   } = props;
@@ -13,7 +14,7 @@ const Header = props => {
       <button
         className="reset-print-btn"
         type="button"
-        onClick={() => {resetState()}}
+        onClick={display ? () => {resetState()} : () => {handlePrint()}}
         style={{backgroundColor: display ? "#ff2f2f" : "#4CAF50"}}>
           {display ? "Reset All" : "Print PDF"}
       </button>

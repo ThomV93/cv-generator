@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import uniqid from "uniqid";
+import { useReactToPrint } from "react-to-print";
 import Header from "./components/header/Header";
 import CvForm from "./components/form/CvForm";
 import CvPreview from "./components/preview/CvPreview";
@@ -117,6 +118,11 @@ const CvGenerator = () => {
     })
   }
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   const onSubmitJob = e => {
     // prevent default page refresh
     e.preventDefault();
@@ -198,6 +204,7 @@ const CvGenerator = () => {
     <div className="main-container">
       <Header
         resetState={resetState}
+        handlePrint={handlePrint}
         togglePreview={togglePreview} 
         display={display}
       />
@@ -225,6 +232,7 @@ const CvGenerator = () => {
           onSubmitLenguage={onSubmitLenguage}
         /> :
         <CvPreview
+          ref={componentRef}
           userImage={userImage}
           personalInfo={personalInfo}
           contactInfo={contactInfo}

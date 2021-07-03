@@ -65,6 +65,7 @@ const CvGenerator = () => {
 
   const resetState = () => {
     setUser(initialUserState);
+    setUserImage({file: "", imagePreviewUrl: ""});
   };
 
   // Store and treat the file to a readable format

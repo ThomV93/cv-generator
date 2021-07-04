@@ -3,6 +3,7 @@ import "./styles/header.scss";
 const Header = props => {
   const {
     resetState,
+    renderMockupState,
     handlePrint,
     togglePreview, 
     display 
@@ -14,7 +15,8 @@ const Header = props => {
       <div className="btn-container">
         <button
           className="mockup-btn"
-          type="button">
+          type="button"
+          onClick={() => {renderMockupState()}}>
             Mockup
         </button>
         <button
@@ -27,7 +29,7 @@ const Header = props => {
         <button 
           className="preview-form-btn"
           type="button" 
-          onClick={() => {togglePreview()} }>
+          onClick={() => {togglePreview()}}>
             {display ? "Preview" : "Form"}
         </button>
       </div>

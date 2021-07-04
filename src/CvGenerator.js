@@ -1,10 +1,11 @@
 import { useState, useRef } from "react";
-import uniqid from "uniqid";
 import { useReactToPrint } from "react-to-print";
+import uniqid from "uniqid";
 import Header from "./components/header/Header";
 import CvForm from "./components/form/CvForm";
 import CvPreview from "./components/preview/CvPreview";
 import initialUserState from "./components/form/initialUserState";
+import mockupState from "./components/form/mockupState";
 import "./CvGenerator.scss";
 
 const CvGenerator = () => {
@@ -61,6 +62,10 @@ const CvGenerator = () => {
     setUser(initialUserState);
     setUserImage({file: "", imagePreviewUrl: ""});
   };
+
+  const renderMockupState = () => {
+    setUser(mockupState);
+  }
 
   // Store and treat the file to a readable format
   const handleImage = e =>{
@@ -185,6 +190,7 @@ const CvGenerator = () => {
     <div className="main-container">
       <Header
         resetState={resetState}
+        renderMockupState={renderMockupState}
         handlePrint={handlePrint}
         togglePreview={togglePreview} 
         display={display}

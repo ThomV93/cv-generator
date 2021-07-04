@@ -41,12 +41,6 @@ const initialUserState = {
 		title: "",
 	},
 	skills: [],
-
-	lenguage: {
-		id: uniqid(),
-		title: "",
-	},
-	lenguages: [],
 };
 
 export default initialUserState;

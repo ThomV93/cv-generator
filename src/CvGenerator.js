@@ -49,12 +49,6 @@ const CvGenerator = () => {
       title: "",
     },
     skills: [],
-
-    lenguage: {
-      id: uniqid(),
-      title: "",
-    },
-    lenguages: [],
   });
 
   // User image state
@@ -171,18 +165,6 @@ const CvGenerator = () => {
     });
   };
 
-  const onSubmitLenguage = e => {
-    e.preventDefault();
-    setUser({
-      ...user,
-      lenguages: lenguages.concat(lenguage),
-      lenguage: {
-        id: uniqid(),
-        title: "",
-      },
-    });
-  };
-
   // Toggle display boolean
   const togglePreview = () => {
     setDisplay(display => !display);
@@ -196,9 +178,7 @@ const CvGenerator = () => {
     education,
     schools, 
     skill,
-    skills,
-    lenguage,
-    lenguages
+    skills
   } = user;
 
   return(
@@ -220,8 +200,6 @@ const CvGenerator = () => {
           schools={schools}
           skill={skill}
           skills={skills}
-          lenguage={lenguage}
-          lenguages={lenguages}
           userImage={userImage}
           handleImage={handleImage}
           handleChange={handleChange}
@@ -230,7 +208,6 @@ const CvGenerator = () => {
           onSubmitJob={onSubmitJob}
           onSubmitSchool={onSubmitSchool}
           onSubmitSkill={onSubmitSkill}
-          onSubmitLenguage={onSubmitLenguage}
         /> :
         <CvPreview
           ref={componentRef}
@@ -240,7 +217,6 @@ const CvGenerator = () => {
           jobs={jobs}
           schools={schools}
           skills={skills}
-          lenguages={lenguages}
         />
       }
     </div>

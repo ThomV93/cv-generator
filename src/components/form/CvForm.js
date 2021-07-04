@@ -3,7 +3,6 @@ import EducationForm from "./EducationForm";
 import PersonalForm from "./PersonalForm";
 import SkillForm from "./SkillForm";
 import WorkForm from "./WorkForm";
-import LenguageForm from './LenguageForm';
 import "./styles/form.scss";
 
 const CvForm = props => {
@@ -16,8 +15,6 @@ const CvForm = props => {
     schools,
     skill,
     skills,
-    lenguage,
-    lenguages,
     userImage
   } = props;
 
@@ -28,8 +25,7 @@ const CvForm = props => {
     handleArrayReset,
     onSubmitJob, 
     onSubmitSchool, 
-    onSubmitSkill,
-    onSubmitLenguage
+    onSubmitSkill
   } = props;
 
   return (
@@ -77,15 +73,6 @@ const CvForm = props => {
           handleChange={handleChange}
           handleArrayReset={handleArrayReset}
           onSubmitSkill={onSubmitSkill}
-        />
-      </div>
-      <div className="form">
-        <h2>Lenguage <span>({lenguages.length})</span></h2>
-        <LenguageForm 
-          lenguage={lenguage} 
-          handleChange={handleChange}
-          handleArrayReset={handleArrayReset}
-          onSubmitLenguage={onSubmitLenguage}
         />
       </div>
     </div>

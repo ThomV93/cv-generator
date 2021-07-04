@@ -3,7 +3,6 @@ import ContactPreview from "./ContactPreview";
 import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
 import ExpertisePreview from "./ExpertisePreview";
-import LenguagePreview from "./LenguagePreview";
 import ProfilePreview from "./ProfilePreview";
 import profile from "../../icons/profile.png";
 import "./styles/preview.scss";
@@ -15,8 +14,7 @@ const CvPreview = React.forwardRef((props, ref) => {
     contactInfo,
     jobs,
     schools,
-    skills,
-    lenguages
+    skills
   } = props;
 
   return (
@@ -26,7 +24,6 @@ const CvPreview = React.forwardRef((props, ref) => {
         <ContactPreview contactInfo={contactInfo}/>
         <EducationPreview schools={schools}/>
         <ExpertisePreview skills={skills}/>
-        <LenguagePreview lenguages={lenguages}/>
       </div>
       <div className="main-section">
         <ProfilePreview personalInfo={personalInfo}/>

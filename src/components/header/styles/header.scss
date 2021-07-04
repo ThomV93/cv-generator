@@ -22,21 +22,39 @@ header {
     grid-column: 1/ 2;
     color: #f7f7f7;
     margin-left: auto;
+    height: 100%;
   }
 
-  .reset-print-btn{
-    @extend %button;
-    grid-column: 9;
-    margin: auto 8px auto auto;
-  }
-
-  .preview-form-btn{
-    @extend %button;
-    grid-column: 10;
-    margin: auto auto auto 8px;
-  }
-
-  button:hover {
-    background-color: #e86006;
+  .btn-container {
+    grid-column: 10/ 12;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    height: 100%;
+    margin: auto;
+    
+    .mockup-btn {
+      @extend %button;
+      background-color: #666
+    }
+  
+    .reset-print-btn{
+      @extend %button;
+      background-color: #666
+    }
+  
+    .preview-form-btn{
+      @extend %button;
+    }
+  
+    button:hover {
+      background-color: darken(#f76a07, 3%);
+      transform: scale(1.02);
+      transition: 100ms;
+      &.mockup-btn {
+        background-color: lighten(#666, 10%);
+      }
+    }
   }
 }

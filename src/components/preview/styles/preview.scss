@@ -67,7 +67,7 @@ h3 {
   .profile-img {
     height: 150px;
     width: auto;
-    border-radius: 50%;
+    border-radius: 100%;
   }
 
   h3 {
@@ -111,7 +111,7 @@ h3 {
   .education-preview {
     width: 100%;
     p {
-      margin: 0.8rem;
+      margin: 0.05rem;
     }
 
     .education-item {
@@ -121,6 +121,7 @@ h3 {
         font-weight: bold;
         font-size: 1.1rem;
         margin-top: 30px;
+        margin-bottom: 0.2rem;
       }
     }
   }
